@@ -8,8 +8,7 @@ const Products = () => {
     // const url = process.env.REACT_APP_API_URL
     // || 'http://localhost:5000/'
 
-    const apiURL = process.env.REACT_APP_API_URL
-    //  ?? 'http://localhost:5000';
+    const apiURL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 
     useEffect(() => {
         console.log("ENV:", process.env);
@@ -40,7 +39,6 @@ const Products = () => {
             </section>
             <div className="product-list">
                 {
-
                     products.map((product, index) => (
                         <div key={index} className="products">
                             <img src={product.image} className="w-100" />
