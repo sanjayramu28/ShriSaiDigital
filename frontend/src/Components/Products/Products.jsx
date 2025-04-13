@@ -5,19 +5,23 @@ const Products = () => {
     const [products, setproducts] = useState([])
 
 
-    const url = import.meta.env.VITE_API_URL||"http://localhost:5000" // Use the environment variable for the API URL
+    const url = import.meta.env.VITE_API_URL || "http://localhost:5000" // Use the environment variable for the API URL
 
     // || 'http://localhost:5000/'
 
     useEffect(() => {
         console.log("API URL:", url);
-        fetch(`${url}/products`).then((res) => res.json()).then((data) => {
-            setproducts(data)
-        }).catch((err) => {
-            console.log(err)
-        })
-        console.log(products)
-    }, [])
+        fetch(`${url}/products`)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("Fetched products:", data);
+                setproducts(data);
+            })
+            .catch((err) => {
+                console.error("Fetch error:", err);
+            });
+    }, []);
+    
     return (
         <>
             <section className="product-hero" id="Products">
