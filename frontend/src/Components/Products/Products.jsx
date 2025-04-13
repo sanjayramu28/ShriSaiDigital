@@ -8,6 +8,7 @@ const Products = () => {
     const url = process.env.REACT_APP_API_URL || 'http://localhost:5000/'
 
     useEffect(() => {
+        console.log("API URL:", apiURL);
         fetch(`${url}/products`).then((res) => res.json()).then((data) => {
             setproducts(data)
         }).catch((err) => {
