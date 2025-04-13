@@ -11,6 +11,7 @@ const Products = () => {
     const apiURL = process.env.REACT_APP_API_URL ?? 'http://localhost:5000';
 
     useEffect(() => {
+        console.log("ENV:", process.env);
         console.log("API URL652:", process.env.REACT_APP_API_URL);
         console.log("API URL:", apiURL); // Should show https://shrisaidigitalbackend.onrender.com
         fetch(`${apiURL}/products`)
