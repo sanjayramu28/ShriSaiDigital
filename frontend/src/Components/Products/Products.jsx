@@ -9,7 +9,7 @@ const Products = () => {
     // || 'http://localhost:5000/'
 
     useEffect(() => {
-        console.log("API URL:Onnum illa", url);
+        console.log("API URL:", url);
         fetch(`${url}/products`).then((res) => res.json()).then((data) => {
             setproducts(data)
         }).catch((err) => {
