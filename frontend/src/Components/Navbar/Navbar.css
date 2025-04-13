@@ -1,0 +1,15 @@
+.links a{
+    text-decoration: none;
+    color: black;
+}
+
+.links a{
+    position: relative;
+    right: 0;
+}
+
+.logo img{
+    width: 150px;
+    height: 100px;
+    display: flex;
+}
