@@ -8,7 +8,8 @@ const Products = () => {
     // const url = process.env.REACT_APP_API_URL
     // || 'http://localhost:5000/'
 
-    const apiURL = process.env.REACT_APP_API_URL ?? 'http://localhost:5000';
+    const apiURL = process.env.REACT_APP_API_URL
+    //  ?? 'http://localhost:5000';
 
     useEffect(() => {
         console.log("ENV:", process.env);
