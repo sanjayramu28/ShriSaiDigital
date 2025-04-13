@@ -8,10 +8,10 @@ const Products = () => {
     // const url = process.env.REACT_APP_API_URL
     // || 'http://localhost:5000/'
 
-    const apiURL = process.env.REACT_APP_API_URL
-    //  ?? 'http://localhost:5000';
+    const apiURL = process.env.REACT_APP_API_URL ?? 'http://localhost:5000';
 
     useEffect(() => {
+        console.log("API URL652:", process.env.REACT_APP_API_URL);
         console.log("API URL:", apiURL); // Should show https://shrisaidigitalbackend.onrender.com
         fetch(`${apiURL}/products`)
             .then((res) => res.json())
