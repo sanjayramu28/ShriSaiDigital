@@ -5,18 +5,29 @@ const Products = () => {
     const [products, setproducts] = useState([])
 
 
-    const url = process.env.REACT_APP_API_URL 
+    // const url = process.env.REACT_APP_API_URL
     // || 'http://localhost:5000/'
 
+    const apiURL = process.env.REACT_APP_API_URL ?? 'http://localhost:5000';
+
     useEffect(() => {
-        console.log("API URL:", url);
-        fetch(`${url}/products`).then((res) => res.json()).then((data) => {
-            setproducts(data)
-        }).catch((err) => {
-            console.log(err)
-        })
-        // console.log(products)
-    }, [])
+        console.log("API URL:", apiURL); // Should show https://shrisaidigitalbackend.onrender.com
+        fetch(`${apiURL}/products`)
+            .then((res) => res.json())
+            .then((data) => setproducts(data))
+            .catch((err) => console.log("Fetch error:", err));
+    }, []);
+
+
+    // useEffect(() => {
+    //     console.log("API URL:", url);
+    //     fetch(`${url}/products`).then((res) => res.json()).then((data) => {
+    //         setproducts(data)
+    //     }).catch((err) => {
+    //         console.log(err)
+    //     })
+    //     // console.log(products)
+    // }, [])
     return (
         <>
             <section className="product-hero" id="Products">
