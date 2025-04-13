@@ -5,7 +5,7 @@ const Products = () => {
     const [products, setproducts] = useState([])
 
 
-    const url = process.env.VITE_API_URL||"http://localhost:5000" // Use the environment variable for the API URL
+    const url = import.meta.env.VITE_API_URL||"http://localhost:5000" // Use the environment variable for the API URL
 
     // || 'http://localhost:5000/'
 
