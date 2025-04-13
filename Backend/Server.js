@@ -4,7 +4,9 @@ const cors = require('cors')
 
 const app = express()
 
-app.use(cors())
+app.use(cors({
+    origin:'https://shrisaidigital.onrender.com'
+}))
 
 mongoose.connect('mongodb+srv://sanjayrajamani2003:sanj%40Y28@cluster0.amfg9is.mongodb.net/Products?retryWrites=true&w=majority', {
     useNewUrlParser: true,
@@ -34,7 +36,7 @@ mongoose.connect('mongodb+srv://sanjayrajamani2003:sanj%40Y28@cluster0.amfg9is.m
         }
     });
     
-const PORT=5000;
+const PORT=process.env.port|| 5000;
 
 app.listen(PORT,()=>console.log(`Server is running on ${PORT}`))
 

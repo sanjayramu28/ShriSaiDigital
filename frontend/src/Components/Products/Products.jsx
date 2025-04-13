@@ -4,8 +4,11 @@ import './Products.css'
 const Products = () => {
     const [products, setproducts] = useState([])
 
+
+    const url = process.env.REACT_APP_API_URL || 'http://localhost:5000/'
+
     useEffect(() => {
-        fetch('http://localhost:5000/products').then((res) => res.json()).then((data) => {
+        fetch(`${url}/products`).then((res) => res.json()).then((data) => {
             setproducts(data)
         }).catch((err) => {
             console.log(err)
