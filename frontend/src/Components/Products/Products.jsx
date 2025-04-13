@@ -5,7 +5,7 @@ const Products = () => {
     const [products, setproducts] = useState([])
 
 
-    const url = process.env.REACT_APP_API_URL || 'http://localhost:5000/'
+    const url = process.env.REACT_APP_API_URL
 
     useEffect(() => {
         fetch(`${url}/products`).then((res) => res.json()).then((data) => {
