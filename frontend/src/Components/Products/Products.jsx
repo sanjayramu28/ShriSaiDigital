@@ -11,9 +11,9 @@ const Products = () => {
     const apiURL = "https://shrisaidigitalbackend.onrender.com";
 
     useEffect(() => {
-        console.log("ENV:", process.env);
-        console.log("API URL2:", process.env.REACT_APP_API_URL);
-        console.log("API Updated2:", process.env.REACT_APP_API_URL);
+        // console.log("ENV:", process.env);
+        // console.log("API URL2:", process.env.REACT_APP_API_URL);
+        // console.log("API Updated2:", process.env.REACT_APP_API_URL);
         console.log("API URL:", apiURL); // Should show https://shrisaidigitalbackend.onrender.com
         fetch(`${apiURL}/products`)
             .then((res) => res.json())
